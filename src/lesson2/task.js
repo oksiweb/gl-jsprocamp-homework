@@ -2,28 +2,28 @@
   Напишите функцию, которая параметрами принимает 2 числа и возвращает их сумму
 */
 export function sum(a, b) {
-
+  return a + b;
 }
 
 /*
   Напишите функцию, которая возвращает сумму всех чисел, что передаются параметрами
 */
-export function sumAll() {
-
+export function sumAll(...rest) {
+  return rest.reduce((a, b) => a + b);
 }
 
 /*
   Напишите функцию, которая возвращает число x в степень n
 */
 export function pow(x, n) {
-
+  return x ** n;
 }
 
 /*
   Напишите функцию, которая возвращает рандомное целое число от from до to
 */
 export function random(from, to) {
-
+  return Math.floor(from + (Math.random() * (to - from)));
 }
 
 export default {
