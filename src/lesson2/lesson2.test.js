@@ -4,7 +4,7 @@ const {
   sum,
   sumAll,
   pow,
-  random
+  random,
 } = lesson2.task;
 
 describe('sum function', () => {
@@ -31,18 +31,18 @@ describe('sumAll function', () => {
 
 describe('pow function', () => {
   test('pow works good', () => {
-    expect(pow(2,2)).toEqual(4);
-    expect(pow(2,4)).toEqual(16);
-    expect(pow(0,1)).toEqual(0);
-    expect(pow(0,0)).toEqual(1);
-    expect(pow(1,0)).toEqual(1);
-    expect(pow(10,1)).toEqual(10);
+    expect(pow(2, 2)).toEqual(4);
+    expect(pow(2, 4)).toEqual(16);
+    expect(pow(0, 1)).toEqual(0);
+    expect(pow(0, 0)).toEqual(1);
+    expect(pow(1, 0)).toEqual(1);
+    expect(pow(10, 1)).toEqual(10);
   });
 });
 
 describe('random function', () => {
   test('random works good', () => {
-    expect(random(1,10)).not.toEqual(11);
-    expect(random(1,10)).not.toEqual(0);
+    expect(random(1, 10)).not.toEqual(11);
+    expect(random(1, 10)).not.toEqual(0);
   });
 });
