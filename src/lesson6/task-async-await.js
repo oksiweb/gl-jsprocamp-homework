@@ -12,7 +12,7 @@ const fetchAsync = async url => {
 async function getClimate(planetName) {
   try {
     const planetInfo = await fetchAsync(`https://swapi.co/api/planets/?search=${planetName}`);
-    return planetInfo.results[0].climate;
+    return planetInfo.results && planetInfo.results.length && planetInfo.results[0].climate;
   } catch (error) {
     console.error('Не удалось получить данные о погоде');
   }
