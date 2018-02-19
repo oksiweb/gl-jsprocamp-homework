@@ -10,8 +10,8 @@ export function countOptional(one, two, ...optional) {
 /*
   Write your implementation of native Function.prototype.bind method
 */
-export function bindContext(fn, context, ...rest) {
-  return () => fn.apply(context, rest);
+export function bindContext(fn, context, ...args) {
+  return (...rest) => fn.apply(context, [...args, ...rest]);
 }
 
 /*
@@ -30,13 +30,11 @@ export function bindContext(fn, context, ...rest) {
 */
 export function addLogCapability(object) {
   let count = 0;
-  const pobject = {
-    log() {
-      count += 1;
-      return `Log message #${count}: ${object.name ? `my name is ${object.name}` : 'I dont have name'}`;
-    },
+  object.log = () => {
+    count += 1;
+    return `Log message #${count}: ${object.name ? `my name is ${object.name}` : 'I dont have name'}`;
   };
-  Object.setPrototypeOf(object, pobject);
+  return object;
 }
 
 /*
