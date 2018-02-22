@@ -14,6 +14,9 @@ describe('sum function', () => {
     expect(sum(0, 0)).toBe(0);
     expect(sum(-1, -1)).toBe(-2);
     expect(sum(-5, 1)).toBe(-4);
+    expect(() => sum(NaN, 1)).toThrow();
+    expect(() => sum(NaN, NaN)).toThrow();
+    expect(() => sum('1', 1)).toThrow();
   });
 });
 
