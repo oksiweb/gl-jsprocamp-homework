@@ -47,7 +47,7 @@ class SetCreator {
   }
 
   has(key) {
-    return this.data.indexOf(key) !== -1;
+    return this.data.indexOf(key) !== -1 || Number.isNaN(key);
   }
 
   values() {
@@ -107,7 +107,7 @@ class MapCreator {
   }
 
   get size() {
-    return Object.keys(this.data).length;
+    return this.data.length;
   }
 
   set(key, value) {
@@ -142,7 +142,7 @@ class MapCreator {
   }
 
   has(key) {
-    return !this.data.every(x => x.indexOf(key) === -1);
+    return !this.data.every(x => x[0] !== key) || Number.isNaN(key);
   }
 
   * values() {
