@@ -49,10 +49,7 @@ function compareByType(a, b) {
   в любом другом случае возврвщвет -1
 */
 function increase(value) {
-  if (typeof value === 'number' && Number.isFinite(value)) {
-    return value + 1;
-  }
-  return -1;
+  return (typeof value === 'number') ? value + 1 : -1;
 }
 
 /*
@@ -192,7 +189,7 @@ function calcComparison(expression) {
   { a: 1, b: 2 }, '.c' => exception
 */
 function evalKey(obj, expression) {
-  const arr = expression.split('.');
+  const arr = expression.replace(/\s/g, '').split('.');
   const [first, ...rest] = arr;
 
   if (first !== '') {
